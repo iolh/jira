@@ -10,6 +10,7 @@
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "qs": "^6.10.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
@@ -19,7 +20,7 @@
   "scripts": {
     "start": "react-scripts start",
     "test": "react-scripts test",
-    "mock": "json-server --watch __json_server_mock__/db.json",
+    "mock": "json-server __json_server_mock__/db.json --watch --port 3001",
     "cm": "cz",
     "prepare": "husky install",
     "build": "react-scripts build",
@@ -48,6 +49,7 @@
   "devDependencies": {
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
+    "@types/qs": "^6.9.7",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.3.0",
     "eslint-config-prettier": "^8.3.0",
