@@ -18,12 +18,13 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
     "test": "react-scripts test",
+    "mock": "json-server --watch __json_server_mock__/db.json",
     "cm": "cz",
-    "eject": "react-scripts eject",
     "prepare": "husky install",
-    "release": "standard-version"
+    "build": "react-scripts build",
+    "release": "standard-version",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
