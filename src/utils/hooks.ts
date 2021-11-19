@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 
-export function useMount(callback) {
+export function useMount(callback: () => void) {
   useEffect(() => {
     callback();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 }
 
-export function useDebounce(value, delay) {
+export function useDebounce<V>(value: V, delay?: number) {
   const [debouncedValue, setDebouncedValue] = useState(value);
 
   useEffect(() => {

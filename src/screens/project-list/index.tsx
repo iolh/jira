@@ -12,16 +12,16 @@ export const ProjectListScreen = () => {
   const [users, setUsers] = useState([]);
   const [list, setList] = useState([]);
 
-  const debouncedParam = useDebounce(params, 2000);
+  const debouncedParam = useDebounce(params, 500);
 
   useEffect(() => {
-    fetch(`${apiUrl}/projects?${qs.stringify(cleanObject(debouncedParam))}`).then(
-      async (response) => {
-        if (response.ok) {
-          setList(await response.json());
-        }
+    fetch(
+      `${apiUrl}/projects?${qs.stringify(cleanObject(debouncedParam))}`
+    ).then(async (response) => {
+      if (response.ok) {
+        setList(await response.json());
       }
-    );
+    });
   }, [debouncedParam]);
 
   useMount(() => {
@@ -34,12 +34,7 @@ export const ProjectListScreen = () => {
 
   return (
     <div>
-      <SearchPnel
-        users={users}
-        setUsers={setUsers}
-        params={params}
-        setParams={setParams}
-      />
+      <SearchPnel users={users} params={params} setParams={setParams} />
       <List list={list} users={users} />
     </div>
   );
